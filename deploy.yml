@@ -14,9 +14,10 @@
       debug:
         var: docker_pull_result
         
-    - name: Check if calculator-java container exists
-      command: docker ps -a --filter "name=calculator-java" --format "{{.Names}}"
-      register: container_exists
+   - name: Check if calculator-java container exists
+     shell: docker ps -a --format "{{.Names}}" | grep -q "calculator-java"
+     register: container_exists
+     ignore_errors: yes
 
     - name: Stop and remove calculator-java container if it exists
       docker_container:
