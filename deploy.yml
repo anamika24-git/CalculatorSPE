@@ -14,19 +14,8 @@
       debug:
         var: docker_pull_result
         
-   - name: Check if calculator-java container exists
-     shell: docker ps -a --format "{{.Names}}" | grep -q "calculator-java"
-     register: container_exists
-     ignore_errors: yes
+    - name: Delete container if present 
+      shell: docker rm -f calculator-java
 
-    - name: Stop and remove calculator-java container if it exists
-      docker_container:
-        name: calculator-java
-        state: absent
-      when: container_exists.stdout_lines | length > 0
-
-    - name: Run calculator-java container
-      docker_container:
-        name: calculator-java
-        image: anunik24/calculator-docker-image
-        detach: yes
+     - name: Running container
+       shell: docker run -it -d --name calculator-java anunik24/calculator-docker-image 
