@@ -14,8 +14,9 @@
       debug:
         var: docker_pull_result
         
-    - name: Delete container if present 
+    - name: Delete container if present
       shell: docker rm -f calculator-java
+      ignore_errors: true
 
-     - name: Running container
-       shell: docker run -it -d --name calculator-java anunik24/calculator-docker-image 
+    - name: Running container
+      shell: docker run -it -d --name calculator-java anunik24/calculator-docker-image
