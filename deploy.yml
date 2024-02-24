@@ -1,5 +1,5 @@
 ---
-- name: Pull Docker Image from Docker Hub
+- name: Localhost
   hosts: localhost
   remote_user: anamikamishra
   become: false
