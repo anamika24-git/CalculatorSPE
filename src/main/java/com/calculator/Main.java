@@ -6,6 +6,10 @@ import java.sql.SQLOutput;
 
 public class Main {
     public static void main(String[] args) throws IOException {
+        if (args.length == 0) {
+            System.out.println("No command-line argument provided. Using default value or handling it in a way suitable for your application.");
+            // You can set a default value or handle it as needed
+        }
 
         BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
         Calculator cal = new Calculator();
