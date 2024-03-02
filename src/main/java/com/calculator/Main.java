@@ -6,10 +6,10 @@ import java.sql.SQLOutput;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        if (args.length == 0) {
-            System.out.println("No command-line argument provided. Using default value or handling it in a way suitable for your application.");
-            // You can set a default value or handle it as needed
-        }
+        // if (args.length == 0) {
+        //     System.out.println("No command-line argument provided. Using default value or handling it in a way suitable for your application.");
+        //     
+        // }
 
         BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
         Calculator cal = new Calculator();
@@ -22,7 +22,7 @@ public class Main {
                         "press 3 for Multiplication\n" + "press 4 for Division\n" +
                         "press 5 for Square Root\n" + "press 6 for Log\n" +
                         "press 7 for Factorial\n" + "press 8 for Power\n" + "press 9 to quit");
-        int choice = Integer.parseInt(args[0]);
+        int choice = Integer.parseInt(input.readLine());
         if(choice == 9) {
             System.out.println("Exiting from System");
             break;
