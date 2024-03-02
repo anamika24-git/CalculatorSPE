@@ -18,7 +18,7 @@ public class Main {
                         "press 3 for Multiplication\n" + "press 4 for Division\n" +
                         "press 5 for Square Root\n" + "press 6 for Log\n" +
                         "press 7 for Factorial\n" + "press 8 for Power\n" + "press 9 to quit");
-        int choice = Integer.parseInt(input.readLine());
+        int choice = Integer.parseInt(args[0]);
         if(choice == 9) {
             System.out.println("Exiting from System");
             break;
